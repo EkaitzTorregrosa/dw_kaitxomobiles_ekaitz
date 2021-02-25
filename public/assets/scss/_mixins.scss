@@ -1,0 +1,31 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 09-oct-2020, 14:08:31
+    Author     : ekait
+*/
+@import "_variables.scss";
+
+@mixin bkgd-gradient($color1, $color2) {
+	//Chrome
+	background: -webkit-linear-gradient($color1, $color2);
+	//Mozila
+	background: -moz-linear-gradient($color1, $color2);
+	//Opera
+	background: -op-linear-gradient($color1, $color2);
+        //Default
+        background: linear-gradient($color1, $color2);
+
+}
+
+@mixin std-heading {
+	color: white;
+	font: {
+		weight: normal;
+		family: $font-family;
+		style: italic;
+	}
+}
