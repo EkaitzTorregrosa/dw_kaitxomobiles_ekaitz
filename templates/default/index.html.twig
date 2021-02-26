@@ -4,7 +4,7 @@
 
     <div class="container-fluid alert alert-dark alert-dismissible fade show pt-0 pb-2"  role="alert" >
         <div class="row">
-            <div class="col-10 mx-auto">
+            <div class="col-10 mx-auto" id="bienvenida">
                 <h2 class="alert-heading display-2">Kaitxo Mobiles</h2>
                 <hr>
                 <p class="mb-0 lead">Desde Kaitxo Mobiles, ofrecemos una amplia gama de teléfonos inteligentes y super molones.</p>
@@ -21,23 +21,31 @@
                 <h6 class="lead">A continuación ofrecemos el  catálogo de móviles.</h6>
             </div>
         </div>
+
         <div class="row bg-white">
-            <div class="col-8 mx-auto ">
-                {% for mobile in mobiles %}
-                    <div class="card">
-                        <img class="my-auto card-img" style="width:60px" src="{{ mobile.getUrlPicture() }}" alt="imagen móvil">
-                        <div class="card-body">
-                            <div class="mx-4 d-flex justify-content-between ">
-                                <h4 class="p-0"> {{ mobile.getPrice() }}</h4>
-                                <a href="{{ path('mobiles_show', {'id': mobile.getId()}) }}" class="btn btn-outline-primary">More details...</a>
-                            </div>
-                            <div class="px-2">
-                                <p class="card-body text-muted mb-0"> {{ mobile.getDescription()|raw }} </p>
+
+            <div class="col-md-12">
+                <div class="row">
+                    {% for mobile in mobiles %}
+                        <div class="col-sm-4 col-lg-4 col-md-4">
+                            <div class="card mb-3">
+                                <img class="my-auto card-img" src="{{ mobile.getUrlPicture() }}" alt="imagen móvil">
+                                <div class="card-body">
+                                    <div class="mx-4 d-flex justify-content-between ">
+                                        <h4 class="p-0"> {{ mobile.getPrice() }}
+                                            <small><i> {{ mobile.getName() }}</i></small>
+                                        </h4>
+                                    </div>
+                                    <div class="px-2">
+                                        <p class="card-text"> {{ mobile.getDescription()|raw }} </p>
+                                    </div>
+                                    <a href="{{ path('mobiles_show', {'id': mobile.getId()}) }}" class="btn btn-outline-primary mb-0">Detalles</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <hr/>
-                {% endfor %}
+
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>

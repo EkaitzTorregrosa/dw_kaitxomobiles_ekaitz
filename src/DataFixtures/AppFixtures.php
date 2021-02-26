@@ -14,16 +14,16 @@ class AppFixtures extends Fixture
         // Creating 20 job offers
         for ($i = 0; $i < 6; $i++) {
             $mobileFaker = Faker\Factory::create();
-            // Employeer
+            
             $user = new Users();
             $user->setUser("user_$i");
             $user->setPass("123");
             $manager->persist($user);
-            // Offer
+            
             $mobile = new Mobiles();
             $mobile->setName($mobileFaker->name);
             $mobile->setDescription($mobileFaker->sentence);
-            $mobile->setUrlPicture($mobileFaker->imageUrl($width=640, $heigth=480));
+            $mobile->setUrlPicture("http://lorempixel.com/g/400/200");
             $mobile->setPrice($mobileFaker->numberBetween($min=200, $max=1500));
             $mobile->setUsers($user);
             $manager->persist($mobile);

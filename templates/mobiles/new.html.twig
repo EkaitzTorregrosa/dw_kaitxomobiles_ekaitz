@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Mobiles{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-8 mx-auto">
+
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Creación de móvil</h3>
+                        <h4 class="card-subtitle mb-2 text-muted">Añadir nuevo</h4>
+                        <div class="card-text">
+                            {{ form_start(form) }}
+                            <div class="border border-white row">
+                                <label for="nombre"
+                                       class="col-4 col-form-label">{{ form_label(form.name) }}</label>
+                                <div class="col-8">
+                                    {{ form_widget(form.name) }}
+                                </div>
+                            </div>
+                            <div class="border border-white  row">
+                                <label for="description"
+                                       class="col-4 col-form-label">{{ form_label(form.description) }}</label>
+                                <div class="col-8">
+                                    {{ form_widget(form.description) }}
+                                </div>
+                            </div>
+                            <div class="border border-white  row">
+                                <label for="urlPicture"
+                                       class="col-4 col-form-label">{{ form_label(form.urlPicture) }}</label>
+                                <div class="col-8">
+                                    {{ form_widget(form.urlPicture) }}
+                                </div>
+                            </div>
+                            <div class="border border-white  row">
+                                <label for="price"
+                                       class="col-4 col-form-label">{{ form_label(form.price) }}</label>
+                                <div class="col-8">
+                                    {{ form_widget(form.price) }}
+                                </div>
+                            </div>
+
+                            <div class="border border-white  row">
+                                <div class="col-sm-4 textarea">
+                                    {{ form_widget(form.save) }}
+                                </div>
+                            </div>
+                            <a class="btn btn-primary" href="{{ path('mobiles_index') }}">Volver a la lista</a>
+                                
+                        </div>
+                        {{ form_end(form) }}
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

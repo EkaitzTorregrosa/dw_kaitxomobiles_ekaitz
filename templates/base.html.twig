@@ -8,10 +8,17 @@
         {% endblock %}
     </head>
     <body>
+        {% block navbar %}
+            {% include 'navbar/public.html.twig' %}
+        {% endblock %}
         {% block body %}{% endblock %}
         {% block javascripts %}
             <script src="{{asset('build/app.js')}}"></script>
         {% endblock %}
     </body>
-
+    <footer class="footer">
+        {% block footer %}
+            {% include 'footer/footer.html.twig' %}
+        {% endblock %}
+    </footer>
 </html>

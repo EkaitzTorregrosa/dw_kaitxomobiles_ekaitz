@@ -1,0 +1,36 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+
+    <div class="d-flex">
+        <div class="p-2">
+            <a class="navbar-brand" href="{{ path('homepage') }}">
+                <img src="{{asset('assets/img/logo.png')}}" class="img-fluid rounded" alt="logoKaitxo">
+            </a>
+        </div>
+
+    </div>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <!--Begin User Security: Login -->
+        <div class="container d-flex justify-content-end">
+            <div class="p-2">
+                <a href="" >
+                    <span class="btn btn-primary">Acceder</span>
+                </a>
+            </div>
+            <div class="p-2">
+                <a href="" ><span class="btn">Registrarse</span></a>
+            </div>
+            <div class="p-2">
+                <a href="{{ path('mobiles_new') }}" class="btn">Nuevo Móvil</a>
+            </div>
+        </div>
+        <!--End  User Security: Login -->
+    </div>
+
+</nav>
+<hr/>
